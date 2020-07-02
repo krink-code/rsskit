@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+try:
+    import feedparser
+except ImportError:
+    print('''install feedparser module...
+    macos python3 -m pip install feedparser
+    linux apt-get install python3-feedparser''')
+
+
