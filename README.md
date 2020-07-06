@@ -1,10 +1,24 @@
 # RSSkit #
 
 RSSkit
+##### Really Simple Syndication Karl Integrated Tool
 
-### Really Simple Syndication Karl's Integrated Tools ###
+## rssparser.py
+* Version: 1
+* requires python3 feedparser
 
-* RSS feed reader
-* Version: 0
+`
+./rssparser.py securitynow.feed https://feeds.twit.tv/sn.xml
+`
 
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## post_url.py
+`
+echo '{"text":"Hello World"}' | ./post_url.py https://msteams.webhook.url
+`
+
+## rssparser.py | post_url.py
+`
+./rssparser.py this.feed https://feed.url/feed.xml | ./post_url.py https://msteams.webhook.url
+`
+
+
