@@ -2,11 +2,6 @@
 
 import sys
 import json
-import select
-
-if not select.select([sys.stdin,],[],[],0.0)[0]:
-    print(json.dumps({"Error":"no input data"}))
-    sys.exit(1)
 
 try:
     values = json.load(sys.stdin)

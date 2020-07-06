@@ -96,8 +96,7 @@ def get_feed(db, url, auth):
     f.close
 
     for title, value in posts_to_print.items():
-        print(json.dumps({'title':title,'link':link, 
-                          'summary':value['summary']}, indent=4))
+        print(json.dumps({'text':title + ' ' + link}))
 
 
 if __name__ == '__main__':
