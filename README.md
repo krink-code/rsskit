@@ -16,7 +16,7 @@ Creates a local data file store of rss/feed titles.  Prints out new entries and 
   "title": "Ripple20 Too",
   "link": "https://twit.tv/shows/security-now/episodes/773"
  }
- ```
+```
 
 ## rssparser.go
 * Version: 1
@@ -37,9 +37,9 @@ go build rssparser.go
 * Version: 1
 * requires python3 feedparser
 
-`
+```
 ./rssparser.py file.feed https://feeds.twit.tv/sn.xml
-`
+```
 
 ## post_url.py
 ```
