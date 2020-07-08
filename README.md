@@ -6,11 +6,10 @@ RSSkit
 # rssparser
 Usage: rssparser db url
 
-db is local file
-url is rss xml feed
+db is local file    
+url is rss xml feed    
 
-Creates a local data file store of rss/feed titles.  Prints out new entries
-and adds them to the db.
+Creates a local data file store of rss/feed titles.  Prints out new entries and adds them to the db.
 ```
 ./rssparser sn.feed https://feeds.twit.tv/sn.xml
 {
@@ -27,6 +26,11 @@ and adds them to the db.
 with basic auth...
 ```
 ./rssparser file.feed https://username:password@server.url/feed.xml
+```
+
+go build
+```
+go build rssparser.go
 ```
 
 ## rssparser.py
