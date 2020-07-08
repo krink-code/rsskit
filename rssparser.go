@@ -3,14 +3,11 @@ package main
 
 import (
     "fmt"
-    //"flag"
     "net/http"
     "io/ioutil"
     "encoding/xml"
     "bytes"
     "os"
-    //"log"
-    //"io"
     "strings"
     "time"
     "encoding/json"
@@ -100,21 +97,12 @@ func main() {
     }
     defer file.Close()
 
-
-    //feed, err := getContent("https://feeds.twit.tv/sn.xml")
     data, err := getContent(url)
     if err != nil {
         fmt.Printf("Failed to get XML: %v \n", err)
         os.Exit(1)
-    } /* else {
-        fmt.Println("Received XML")
-    } */
+    }
 
-    //fmt.Println("Received XML: %v", data)
-
-    //fmt.Println(string(data))
-
-    //f := strings(feed)
     f := bytes.NewReader(data)
     byteValue, _ := ioutil.ReadAll(f)
     rss := Rss{}
@@ -126,22 +114,6 @@ func main() {
     if rss.Channel.Items != nil {
         fmt.Println("Rss Version: " + rss.Version)
     }
-    */
-
-    /*
-    if feed.Entries == nil {
-        fmt.Println("feed is nill")
-    }
-    */
-
-    /*
-    fmt.Println("Rss Version: " + rss.Version)
-    fmt.Println("Rss Title: " + rss.Title)
-    fmt.Println("Rss Link: " + rss.Link)
-    fmt.Println("Rss Description: " + rss.Description)
-    fmt.Println("Rss.Channel Title: " + rss.Channel.Title)
-    fmt.Println("Feed.Title: " + feed.Title)
-    fmt.Println("Feed.Link: " + feed.Link)
     */
 
     b, err := ioutil.ReadFile(db)
@@ -186,3 +158,4 @@ func main() {
 	<channel>
 		<title>
 */
+
