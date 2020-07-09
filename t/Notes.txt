@@ -1,0 +1,13 @@
+
+
+//https://stackoverflow.com/questions/24870309/golang-xml-unmarshalling-issue-local-name-collisions-fail
+//https://stackoverflow.com/questions/34975837/parsing-rss-feed-in-go
+
+/*
+            <title>SN 765: An Authoritarian Internet? --Joy.Joy.Title</title>
+            <itunes:title>An Authoritarian Internet? --YES.YES.itunes</itunes:title>
+*/
+
+
+
+

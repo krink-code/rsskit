@@ -65,11 +65,19 @@ echo '{"text":"Hello World"}' | ./post_url.py https://msteams.webhook.url
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" version="2.0">
     <channel>
         <title></title><link></link>
-        <item><title></title><link></link><description></description></item>
+        <item><title></title><itunes:title></itunes:title><link></link><description></description></item>
 
 ```
      
+```
+/* https://feeds.twit.tv/sn.xml
 
+            <title>SN 765: An Authoritarian Internet?</title>
+            <itunes:title>An Authoritarian Internet?</itunes:title>
+*/
+//https://stackoverflow.com/questions/24870309/golang-xml-unmarshalling-issue-local-name-collisions-fail
+//https://stackoverflow.com/questions/34975837/parsing-rss-feed-in-go
+```
 
 
 
