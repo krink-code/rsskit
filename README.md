@@ -12,16 +12,14 @@ rss2json.py
 * Version: 1
 * requires python3 feedparser
 ```
-./rss2json.py https://feeds.twit.tv/sn.xml
 {
   "title": "Security Now (Audio)",
   "link": "https://twit.tv/shows/security-now",
   "posts": [
-    [
-      {
-        "title": "SN 774: 123456",
-        "link": "https://twit.tv/shows/security-now/episodes/774",
-        "descrtiption": 
+    {
+      "title": "SN 774: 123456",
+      "link": "https://twit.tv/shows/security-now/episodes/774",
+      "descrtiption":
 ```
 
 # rssparser

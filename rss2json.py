@@ -66,7 +66,7 @@ def get_feed(url, auth):
                                #'content': content, 
                                'descrtiption': description})
 
-    jdata = {'title':feed.channel.title,'link':feed.channel.link, 'posts': [ posts_to_print ]}
+    jdata = {'title':feed.channel.title,'link':feed.channel.link, 'posts': posts_to_print}
     print(json.dumps(jdata, indent=2))
 
 
