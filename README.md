@@ -1,7 +1,28 @@
 # RSSkit #
 
 RSSkit
-##### Really Simple Syndication Karl Integrated Tool
+##### Really Simple Syndication karl integrated tool
+
+# rss2json
+Usage: rss2json url      
+
+url is rss xml feed    
+
+rss2json.py
+* Version: 1
+* requires python3 feedparser
+```
+./rss2json.py https://feeds.twit.tv/sn.xml
+{
+  "title": "Security Now (Audio)",
+  "link": "https://twit.tv/shows/security-now",
+  "posts": [
+    [
+      {
+        "title": "SN 774: 123456",
+        "link": "https://twit.tv/shows/security-now/episodes/774",
+        "descrtiption": 
+```
 
 # rssparser
 Usage: rssparser db url
