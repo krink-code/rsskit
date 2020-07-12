@@ -56,15 +56,15 @@ def get_feed(url, auth):
 
         title = post.get('title', default=None)
         link = post.get('link', default=None)
-        summary = post.get('summary', default=None)
-        content = post.get('content', default=None)
         description = post.get('description', default=None)
+        published = post.get('published', default=None)
+        #summary = post.get('summary', default=None)
+        #content = post.get('content', default=None)
 
         posts_to_print.append({'title':title,
                                'link':link, 
-                               #'summary': summary, 
-                               #'content': content, 
-                               'descrtiption': description})
+                               'descrtiption': description,
+                               'published': published})
 
     jdata = {'title':feed.channel.title,'link':feed.channel.link, 'posts': posts_to_print}
     print(json.dumps(jdata, indent=2))

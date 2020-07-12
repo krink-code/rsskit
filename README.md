@@ -1,7 +1,6 @@
 # RSSkit #
 
-RSSkit
-##### Really Simple Syndication karl integrated tool
+RSSkit (Really Simple Syndication karl integrated tool)     
 
 # rss2json
 Usage: rss2json url      
@@ -12,6 +11,7 @@ rss2json.py
 * Version: 1
 * requires python3 feedparser
 ```
+./rssparser.py https://feeds.twit.tv/sn.xml
 {
   "title": "Security Now (Audio)",
   "link": "https://twit.tv/shows/security-now",
