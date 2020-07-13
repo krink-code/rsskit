@@ -99,4 +99,25 @@ echo '{"text":"Hello World"}' | ./post_url.py https://msteams.webhook.url
 ```
 
 
+----
+
+json format
+
+```
+{
+  "title": "rss/feed",
+  "link": "https://host/rss.xml",
+  "posts": [
+  {
+    "title":"item 1",
+    "link":"http://item.1"
+  },
+  {
+    "title":"item 2",
+    "link":"http://item.2"
+  } 
+  ]
+}
+```
+
 

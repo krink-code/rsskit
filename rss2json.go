@@ -107,29 +107,50 @@ func main() {
     rss := Rss{}
     xml.Unmarshal(byteValue, &rss)
 
-    /*
-    if rss.Channel.Items != nil {
-        fmt.Println("Rss Version: " + rss.Version)
-    }
-    */
+    fmt.Println("{")
 
-    for _, item := range rss.Channel.Items {
-        //fmt.Println(item)
-        jdata := &Json{Title: item.Title, Link: item.Link,
-                           Description: item.Description, PubDate: item.PubDate}
-        j, _ := json.MarshalIndent(jdata, " ", " ")
-        fmt.Println(string(j))
+    if rss.Channel.Items != nil {
+        fmt.Println(`"title": "` + rss.Channel.Title + `",`)
+        fmt.Println(`"link": "` + rss.Channel.Link + `",`)
+        fmt.Println(`"posts": [`)
+
+        c := len(rss.Channel.Items)
+        for _, item := range rss.Channel.Items {
+            c--
+            jdata := &Json{Title: item.Title, Link: item.Link,
+                       Description: item.Description, PubDate: item.PubDate}
+            j, _ := json.MarshalIndent(jdata, " ", " ")
+            if c == 0 {
+                fmt.Println(string(j))
+            } else {
+                fmt.Println(string(j) + `,`)
+            }
+        }
+        fmt.Println(`]`)
     }
 
     feed := Feed{}
     xml.Unmarshal(byteValue, &feed)
 
-    for _, entry := range feed.Entries {
-        jdata := &Json{Title: entry.Title, Link: entry.Link.Href,
-                           Summary: entry.Summary, Updated: entry.Updated}
-        j, _ := json.MarshalIndent(jdata, " ", " ")
-        fmt.Println(string(j))
+    if feed.Entries != nil {
+        fmt.Println(`"title": "` + feed.Title + `",`)
+        fmt.Println(`"link": "` + feed.Link.Href + `",`)
+        fmt.Println(`"posts": [`)
+
+        c := len(feed.Entries)
+        for _, entry := range feed.Entries {
+            jdata := &Json{Title: entry.Title, Link: entry.Link.Href,
+                       Summary: entry.Summary, Updated: entry.Updated}
+            j, _ := json.MarshalIndent(jdata, " ", " ")
+            if c == 0 {
+                fmt.Println(string(j))
+            } else {
+                fmt.Println(string(j) + `,`)
+            }
+        }
+        fmt.Println(`]`)
     }
+    fmt.Println("}")
 
 }
 
